@@ -1,0 +1,193 @@
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    outline: none;
+}
+
+.container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+.title {
+    display: flex;
+    font-family: serif;
+    font-size: 30px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.choose-question {
+    display: flex;
+    font-size: 30px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(212, 240, 171);
+    color: black;
+}
+
+.choose-question.hide {
+    font-size: 0;
+    padding: 0;
+    animation: hide-question 0.5s;
+}
+
+@keyframes hide-question {
+    from {
+        font-size: 30px;
+        padding: 20px;
+    }
+    50% {
+        font-size: 0px;
+        padding: 20px;
+    }
+    to {
+        font-size: 0;
+        padding: 0;
+    }
+}
+
+.choose {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 100;
+    background-color: gray;
+    width: 100%;
+    transition-duration: 0.5s;
+}
+
+.choose.no-choice {
+    left: -50%;
+}
+
+.choice {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    background-color: indigo;
+    flex: 0 0 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px;
+    color: black;
+    font-weight: 100;
+    transition-duration: 0.2s;
+}
+
+.choice:hover {
+    font-size: 90px;
+}
+
+.choice.maker {
+    background: url("../images/maker-bg.jpg") rgba(255, 255, 255, 0.2);
+    background-blend-mode: overlay;
+    background-size: cover;
+}
+
+.choice.designer {
+    background: url("../images/designer-bg.jpg") rgba(255, 255, 255, 0.2);
+    background-blend-mode: overlay;
+    background-size: cover;
+}
+
+.choose.maker-choice {
+    left: 0;
+}
+
+.choose.designer-choice {
+    left: -100%;
+}
+
+.registration {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    flex: 0 0 50%;
+    padding: 20px;
+}
+
+.registration h1 {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.alternate-desg-btn {
+    position: fixed;
+    right: 0;
+    z-index: 99;
+    height: 100%;
+    width: 0px;
+    padding: 0;
+    font-size: 0;
+    color: black;
+    background-color: white;
+    border: none;
+    transition-duration: 0.5s;
+}
+
+.alternate-desg-btn:hover {
+    background-color: #ccc;
+}
+
+.alternate-desg-btn.active {
+    width: 40px;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.alternate-desg-btn.inactive {
+    width: 0px;
+    padding: 0px;
+    font-size: 0px;
+}
+
+.alternate-maker-btn {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    z-index: 99;
+    width: 0px;
+    padding: 0;
+    font-size: 0;
+    color: black;
+    background-color: white;
+    border: none;
+    transition-duration: 0.5s;
+}
+
+.alternate-maker-btn:hover {
+    background-color: #ccc;
+}
+
+.alternate-maker-btn.active {
+    width: 40px;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.alternate-maker-btn.inactive {
+    width: 0px;
+    padding: 0px;
+    font-size: 0px;
+}
