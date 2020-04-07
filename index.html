@@ -4,29 +4,211 @@
         <title>Naya Studio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/index.css" />
+        <script
+            src="https://kit.fontawesome.com/f01d2a996a.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
-    <body>
-        <div class="container">
-            <div class="title">
-                naya
+    <body scroll="no">
+        <nav>
+            naya
+        </nav>
+        <section id="domain">
+            <div class="part">
+                <h1>What defines you?</h1>
+                Choose Maker if you build stuff<br />
+                Choose Designer if you design stuff
             </div>
-            <div class="choose no-choice">
-                <div class="registration">
-                    <h1>Register as a Maker</h1>
-                </div>
-                <button class="alternate-desg-btn">></button>
-                <div id="#maker-choice" class="choice maker">
-                    Maker
-                </div>
-                <div id="#designer-choice" class="choice designer">
-                    Designer
-                </div>
-                <button class="alternate-maker-btn"><</button>
-                <div class="registration">
-                    <h1>Register as a Designer</h1>
-                </div>
+            <div class="part form">
+                <form>
+                    <button
+                        type="button"
+                        id="#maker-choice"
+                        class="check-btn unchecked"
+                        style="width: 300px;"
+                    >
+                        Maker
+                    </button>
+                    <button
+                        type="button"
+                        id="#desg-choice"
+                        class="check-btn unchecked"
+                        style="width: 300px;"
+                    >
+                        Designer
+                    </button>
+                </form>
             </div>
-        </div>
+            <a class="next" href="#credentials"
+                >Next <i class="fa fa-arrow-down"></i
+            ></a>
+        </section>
+        <section id="credentials">
+            <a class="back" href="#domain"
+                >Back <i class="fa fa-arrow-up"></i
+            ></a>
+            <div class="part form">
+                <form>
+                    <input id="email" type="text" placeholder="Email" /><br />
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="Password"
+                    /><br />
+                    <input
+                        id="rpassword"
+                        type="password"
+                        placeholder="Retype Password"
+                    /><br />
+                </form>
+            </div>
+            <div class="part">
+                <h1>Lets keep in touch</h1>
+                Enter your email and create a password for a new account
+            </div>
+            <a class="next" href="javascript:nextDomain()"
+                >Next <i class="fa fa-arrow-down"></i
+            ></a>
+        </section>
+        <section id="maker-data" style="display: none;">
+            <a class="back" href="#credentials"
+                >Back <i class="fa fa-arrow-up"></i
+            ></a>
+            <div class="part">
+                <h1>As a Maker</h1>
+                Fill in your info as a maker
+            </div>
+            <div class="part form">
+                <form>
+                    <label>1. How many projects do you work on at a time?</label
+                    ><br /><select id="no_projects"></select
+                    ><br />
+                    <label>2. What materials can you work with?</label>
+                    <div class="row">
+                        <button
+                            type="button"
+                            name="materials"
+                            class="check-btn unchecked"
+                            value="Wood"
+                        >
+                            Wood
+                        </button>
+                        <button
+                            type="button"
+                            name="materials"
+                            class="check-btn unchecked"
+                            value="Metal"
+                        >
+                            Metal
+                        </button>
+                        <button
+                            type="button"
+                            name="materials"
+                            class="check-btn unchecked"
+                            value="Glass"
+                        >
+                            Glass
+                        </button>
+                        <button
+                            type="button"
+                            name="materials"
+                            class="check-btn unchecked"
+                            value="Plastic"
+                        >
+                            Plastic
+                        </button>
+                        <button
+                            type="button"
+                            name="materials"
+                            class="check-btn unchecked"
+                            value="Concrete"
+                        >
+                            Concrete
+                        </button>
+                        <button
+                            type="button"
+                            name="materials"
+                            class="check-btn unchecked"
+                            value="Other"
+                        >
+                            Other
+                        </button>
+                    </div>
+                    <label>3. Where are you based? (Location)</label><br />
+                    <input
+                        id="location"
+                        type="text"
+                        placeholder="Enter your Address"
+                    />
+                </form>
+                <a class="next" href="javascript:makerFilled()"
+                    >Next <i class="fa fa-arrow-down"></i
+                ></a>
+            </div>
+        </section>
+        <section id="desg-data" style="display: none;">
+            <a class="back" href="javascript:previousDomain()"
+                >Back <i class="fa fa-arrow-up"></i
+            ></a>
+            <div class="part">
+                <h1>As a Designer</h1>
+                Fill in your info as a designer
+            </div>
+            <div class="part form">
+                <form>
+                    <label
+                        >1. How much time can you spend on Naya projects per
+                        week? (hours)</label
+                    ><br /><input
+                        type="number"
+                        id="time_week"
+                        min="1"
+                        max="168"
+                    /><br />
+                    <label>2. Which of the following best describes you?</label>
+                    <select id="desg-profession">
+                        <option value="---Select One---">
+                            ---Select One---
+                        </option>
+                        <option value="Furniture Designer"
+                            >Furniture Designer</option
+                        >
+                        <option value="Architect">Architect</option>
+                        <option value="Interior Designer"
+                            >Interior Designer</option
+                        >
+                        <option value="Industrial Designer"
+                            >Industrial Designer</option
+                        >
+                        <option value="Designer Maker">Designer Maker</option>
+                        <option value="Other">Other</option> </select
+                    ><br />
+                    <label>3. What's your education level/type?</label><br />
+                    <input
+                        id="education"
+                        type="text"
+                        placeholder="Enter your Address"
+                    />
+                </form>
+            </div>
+            <a class="next" href="#form-complete"
+                >Next <i class="fa fa-arrow-down"></i
+            ></a>
+        </section>
+        <section id="form-complete">
+            <a class="back" href="javascript:refill()"
+                >Back <i class="fa fa-arrow-up"></i
+            ></a>
+            <div class="part form">
+                <button id="proceed-button" type="button" class="submit-button">
+                    Proceed
+                </button>
+            </div>
+            <div id="proceed-message" class="part">
+                <h1>You're all set!</h1>
+                Click proceed to complete registration
+            </div>
+        </section>
     </body>
     <script type="text/javascript" src="js/index.js"></script>
 </html>
