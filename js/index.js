@@ -9,7 +9,7 @@ var is_designer = false,
 
 var materials = [];
 
-var data = {};
+var submitData = {};
 
 select_event = document.createEvent("HTMLEvents");
 select_event.initEvent("select-option", true, true);
@@ -178,7 +178,7 @@ function verifyForm() {
         return false;
     }
 
-    var submitData = {
+    submitData = {
         email: document.getElementById("email").value,
         password: document.getElementById("password").value,
     };
@@ -239,13 +239,25 @@ function verifyForm() {
         submitData["desg_profession"] = profession;
         submitData["education"] = education;
     }
-    data = submitData;
+    console.log("Got data -" + submitData);
     return true;
 }
 
 function submit() {
     if (verifyForm()) {
-        console.log("Submitting data -" + data);
+        console.log(submitData);
+        $.ajax({
+            url: "http://friday.banaborg.tech:7800/",
+            type: "GET",
+            contentType: "application/json",
+            success: (result) => {
+                window.location = "success.html";
+            },
+            error: (xhr, status, error) => {
+                alert("Error occurred while registering!");
+            },
+            data: submitData,
+        });
     }
 }
 

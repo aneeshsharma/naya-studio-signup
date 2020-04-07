@@ -214,3 +214,37 @@ label {
 .submit-button:disabled {
     background-color: #444;
 }
+
+.success-screen {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    font-size: 72px;
+    color: black;
+    background-color: white;
+    text-align: center;
+    flex-direction: column;
+}
+
+.success-screen i {
+    font-size: 300px;
+    color: indigo;
+    margin: 30px;
+    animation: bounce-anim 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce-anim {
+    from {
+        color: indigo;
+    }
+    50% {
+        color: rgb(115, 0, 197);
+    }
+    to {
+        color: indigo;
+    }
+}
