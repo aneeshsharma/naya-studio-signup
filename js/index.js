@@ -122,12 +122,18 @@ function disableProceed() {
     document.getElementById("proceed-button").disabled = true;
     document.getElementById("proceed-message").innerHTML =
         "<h1>Please complete the form</h1> Maker sure all your data is correct and that you have chosen atleast one of Maker or designer";
+    document.getElementById("proceed-message").classList.remove("complete-bg");
+    document.getElementById("proceed-message").classList.add("incomplete-bg");
 }
 
 function enableProceed() {
     document.getElementById("proceed-button").disabled = false;
     document.getElementById("proceed-message").innerHTML =
         "<h1>You're all set!</h1> Click proceed to complete registration";
+    document
+        .getElementById("proceed-message")
+        .classList.remove("incomplete-bg");
+    document.getElementById("proceed-message").classList.add("complete-bg");
 }
 
 function getMaterials() {

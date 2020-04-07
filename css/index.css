@@ -52,7 +52,6 @@ section {
     padding: 80px;
     text-align: center;
     justify-content: center;
-    background-color: #ddd;
     color: #222;
 }
 
@@ -247,4 +246,46 @@ label {
     to {
         color: indigo;
     }
+}
+
+.domain-bg {
+    background: url("../images/domain.jpg") rgba(0, 0, 0, 0.8);
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: white;
+}
+
+.maker-bg {
+    background: url("../images/maker-bg.jpg") rgba(0, 0, 0, 0.8);
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: white;
+}
+
+.cred-bg {
+    background: url("../images/cred-bg.jpg") rgba(0, 0, 0, 0.8);
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: white;
+}
+
+.desg-bg {
+    background: url("../images/desg-bg.jpg") rgba(0, 0, 0, 0.8);
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: white;
+}
+
+.complete-bg {
+    background: url("../images/complete-bg.jpg") rgba(0, 0, 0, 0.8);
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: white;
+}
+
+.incomplete-bg {
+    background: url("../images/incomplete-bg.jpg") rgba(0, 0, 0, 0.8);
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: white;
 }
