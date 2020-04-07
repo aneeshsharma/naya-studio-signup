@@ -251,7 +251,11 @@ function submit() {
             type: "GET",
             contentType: "application/json",
             success: (result) => {
-                window.location = "success.html";
+                if (result == "SUCCESS") {
+                    window.location = "success.html";
+                } else {
+                    alert("Error occurred while registering!");
+                }
             },
             error: (xhr, status, error) => {
                 alert("Error occurred while registering!");
